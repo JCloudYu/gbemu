@@ -6,6 +6,7 @@ Gameboy::Gameboy(std::vector<u8> cartridge_data, Options& options, std::vector<u
     video(cpu, mmu),
     serial(options.print_serial),
     mmu(cartridge, cpu, video, input, serial, timer),
+    timer(cpu),
     debugger(*this, options.debugger)
 {
     log_set_level(get_log_level(options));
